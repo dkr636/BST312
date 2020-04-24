@@ -285,15 +285,35 @@ bool BST_312 <ItemType>::isFull() const
 template<class ItemType>
 void BST_312 <ItemType>::insertItem(TreeNode*& t, const ItemType& newItem)
 {
+    TreeNode *temp = new TreeNode;
+    temp->data = newItem;
+    temp->left = NULL;
+    temp->right = NULL;
+    int eflag = 0;
 
-    //YOUR CODE GOES HERE
-
+    while(t != NULL){
+        eflag++;
+        if (newItem >= t->data){
+            t = t->right;
+cout << "gone right" << endl;
+        }
+        else if (newItem < t->data){
+            t = t->left;
+cout << "gone left" << endl;
+        }
+        else if (eflag > 100){
+            cout << "error" << endl;
+            return;
+        }
+    }
+    t = temp;
+    delete temp;
 }
 
 template<class ItemType>
 void BST_312 <ItemType>::insertItem(const ItemType& newItem)
 {
-    //YOUR CODE GOES HERE
+    insertItem(root, newItem);
 }
 
 
@@ -301,15 +321,18 @@ void BST_312 <ItemType>::insertItem(const ItemType& newItem)
 template<class ItemType>
 int BST_312 <ItemType>::countNodes(TreeNode* t) const
 {
-    //YOUR CODE GOES HERE
-
+      vector<TreeNode> retv;
+      inOrderTraversal(root, retv);
+      return retv.size(); 
 }
 
 
 template<class ItemType>
 int BST_312 <ItemType>::countNodes()
 {
-    //YOUR CODE GOES HERE
+    int ret;
+    ret = countNodes(root);
+    return ret;
 }
 
 template<class ItemType>

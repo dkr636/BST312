@@ -33,7 +33,7 @@ int main() {
         bst.insertItem(s);
         inFile >> s;
     }
-
+/*
     cout << "postorder traversal is " << endl;
     print(bst.postOrderTraversal());
     cout << endl;
@@ -54,6 +54,6 @@ int main() {
     cout << endl;
     cout << "number of nodes in tree after delete is " << bst.countNodes() << endl;
     cout << endl;
-
+*/
 }
 
