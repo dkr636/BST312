@@ -33,6 +33,14 @@ int main() {
         bst.insertItem(s);
         inFile >> s;
     }
+
+    BST_312<int> numbs;
+    int i = 0;
+    while(i < 10){
+        cout << "intserting ..." << i << endl;
+        numbs.insertItem(i);
+        i++;
+    }
 /*
     cout << "postorder traversal is " << endl;
     print(bst.postOrderTraversal());
